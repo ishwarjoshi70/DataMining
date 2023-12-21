@@ -1,0 +1,58 @@
+{
+  "dimensions": [
+    {
+      "name": "region",
+      "role": "region"
+    },
+    {
+      "name": "age",
+      "role": "age"
+    },
+    {
+      "name": "income",
+      "role": "income"
+    },
+    {
+      "name": "online_shopper",
+      "role": "online_shopper"
+    }
+  ],
+  "cubes": [
+    {
+      "name": "model",
+      "dimensions": [
+        "region",
+        "online_shopper",
+        "age"
+      ],
+      "measures": [
+        {
+          "name": "income",
+          "label": "income"
+        }
+      ],
+      "aggregates": [
+        {
+          "name": "total_income",
+          "function": "sum",
+          "measure": "income"
+        },
+        {
+          "name": "min_income",
+          "function": "min",
+          "measure": "income"
+        },
+        {
+          "name": "max_income",
+          "function": "max",
+          "measure": "income"
+        },
+        {
+          "name": "avg_income",
+          "function": "avg",
+          "measure": "income"
+        }
+      ]
+    }
+  ]
+}
